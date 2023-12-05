@@ -1,4 +1,4 @@
-package homework1.Task2_2;
+package homework1.Task2_1;
 
 import java.util.Scanner;
 
@@ -19,8 +19,11 @@ public class NDS {
     }
 
     static void calculationCostComponents(double fullCost) {
-        System.out.println("Cost without NDS: " + Math.round(fullCost / 1.2 * 100) / 100.0);
-        System.out.println("Cost NDS: " + Math.round((fullCost - fullCost / 1.2) * 100) / 100.0);
-        System.out.println("Value of NDS for the tax return: " + Math.round(fullCost - fullCost / 1.2));
+        double CostWithoutNDS = Math.round(fullCost / 1.2 * 100) / 100.0;
+        double CostNDS = Math.round((fullCost - fullCost / 1.2) * 100) / 100.0;
+        int NDSForTaxService = (int) Math.round(fullCost - fullCost / 1.2);
+        System.out.println("Cost without NDS: " + CostWithoutNDS);
+        System.out.println("Cost NDS: " + CostNDS);
+        System.out.println("Value of NDS for the tax return: " + NDSForTaxService);
     }
 }
