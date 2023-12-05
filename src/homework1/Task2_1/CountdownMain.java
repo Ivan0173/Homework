@@ -1,8 +1,8 @@
-package homework1.Task2;
+package homework1.Task2_1;
 
 import java.util.Scanner;
 
-public class Countdown {
+public class CountdownMain {
     public static void main(String[] args) {
         int totalNumberMinutes = 1443;
         if (args.length > 0) {
