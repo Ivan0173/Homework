@@ -1,4 +1,4 @@
-package Main.homework6.Task6_3;
+package homework6.Task6_3;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -28,6 +28,9 @@ public class CommentService {
                         .toArray(Comment[]::new);
                 return sortListComment;
     }
+    public Comment[] getSortModerationListComment(){
+        return this.getSortModerationListComment(0,Integer.MAX_VALUE);
+    }
     public Comment[] getCommentOfAuthorSortByModeration(String nameAuthor, int page, int pageSize){
         Comment[] arrayComment = this.commentList.stream()
                 .filter(e->e.getNameAuthor().equals(nameAuthor))
@@ -38,6 +41,9 @@ public class CommentService {
         return arrayComment;
     }
 
+    public Comment[] getCommentOfAuthorSortByModeration(String nameAuthor){
+        return this.getCommentOfAuthorSortByModeration(nameAuthor, 0, Integer.MAX_VALUE);
+    }
     public Comment[] getCommentDate(LocalDate controlDate, int page, int pageSize){
         Comment[] arrayComment = this.commentList.stream()
                 .filter(e->e.getDateCreation().compareTo(controlDate)>0)
@@ -63,5 +69,8 @@ public class CommentService {
                 .toArray(Comment[]::new);
         //Конец костыля
         return arrayComment;
+    }
+    public Comment[] getCommentDate(LocalDate controlDate){
+        return this.getCommentDate(controlDate, 0,Integer.MAX_VALUE);
     }
 }
