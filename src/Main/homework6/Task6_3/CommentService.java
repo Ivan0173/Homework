@@ -19,6 +19,10 @@ public class CommentService {
         commentList.add(comment);
     }
 
+    public Comment getCommentByIndex(int index){
+        return this.commentList.get(index);
+    }
+
     public Comment[] getSortModerationListComment(int page, int pageSize){
         Comment[] sortListComment = this.commentList.stream()
                 .filter(e->e.getModeration())
