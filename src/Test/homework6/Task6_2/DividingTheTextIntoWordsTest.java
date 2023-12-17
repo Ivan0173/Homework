@@ -11,25 +11,25 @@ class DividingTheTextIntoWordsTest {
         assertEquals("", DividingTheTextIntoWords.divideTheTextIntoWords(""));
         String expectedString = "";
         String resultString = DividingTheTextIntoWords.divideTheTextIntoWords("Да; и; но ((4))");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
 
         expectedString = "ДЕНЬ ДОБРЫЙ";
         resultString = DividingTheTextIntoWords.divideTheTextIntoWords("Добрый день!");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
 
         expectedString = "ЗЕЛЕНЫЙ СИНЕ";
         resultString = DividingTheTextIntoWords.divideTheTextIntoWords("сине-зеленый");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
 
         expectedString = "БЕЗ КОФЕ МОЛОКОМ САХАРА ЧАШКА";
         resultString = DividingTheTextIntoWords.divideTheTextIntoWords("Чашка кофе с молоком без сахара.");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
 
         expectedString = "ЕЩЕ МНОГО РАЗ";
         resultString = DividingTheTextIntoWords.divideTheTextIntoWords("Эх раз, да еще раз, да еще много-много раз!");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
 
-        expectedString= "ADIPISCING ALIQUA ALIQUIP AMET " +
+        expectedString = "ADIPISCING ALIQUA ALIQUIP AMET " +
                 "ANIM AUTE CILLUM COMMODO " +
                 "CONSECTETUR CONSEQUAT CULPA " +
                 "CUPIDATAT DESERUNT DOLOR DOLORE " +
@@ -52,6 +52,6 @@ class DividingTheTextIntoWordsTest {
                 "nulla pariatur. Excepteur sint occaecat cupidatat\n" +
                 "non proident, sunt in culpa qui officia deserunt\n" +
                 "mollit anim id est laborum.");
-        assertEquals(true,expectedString.equals(resultString));
+        assertEquals(true, expectedString.equals(resultString));
     }
 }
