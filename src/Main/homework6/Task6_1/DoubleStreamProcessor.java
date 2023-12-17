@@ -32,8 +32,10 @@ public class DoubleStreamProcessor {
 
     static double  maximumDifference(DoubleStream doubleStream){
         double[] sortArray = doubleStream.sorted().toArray();
-        double maximumDifference = Math.abs(sortArray[sortArray.length-1]-sortArray[0]);
-        return maximumDifference;
+        if(sortArray.length>0) {
+            double maximumDifference = Math.abs(sortArray[sortArray.length - 1] - sortArray[0]);
+            return maximumDifference;
+        }else return 0;
     }
 
     static double[]  arrayValuesIsLarger(DoubleStream doubleStream, double limit){
@@ -42,11 +44,12 @@ public class DoubleStreamProcessor {
         return arr;
     }
 
-    static String  maxLengthValue(DoubleStream doubleStream){
-        String numberString = doubleStream.mapToObj(e->Double.toString(e))
-                .max(Comparator
-                        .comparing(e->e.toString().length()))
-                .get();
-        return numberString;
-    }
+    static double  maxLengthValue(DoubleStream doubleStream){
+            String numberString = doubleStream.mapToObj(e -> Double.toString(e))
+                    .max(Comparator
+                            .comparing(e -> e.toString().length()))
+                    .get();
+            return Double.parseDouble(numberString);
+        }
 }
+
